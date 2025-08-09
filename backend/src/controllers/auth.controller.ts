@@ -26,13 +26,14 @@ export const signup=async(req:Request,res:Response):Promise<void>=>{
         })
         await newUser.save()
         if(newUser){
-        await genToken(newUser._id,res)
+        const token=  await genToken(newUser._id)
         res.status(201).json({message:"User creadted Successfully !",
             user:{
                 id:newUser._id,
                 name:newUser.name,
                 email:newUser.email
-            }
+            },
+            token
         })
         }
     }
@@ -56,13 +57,14 @@ export const login=async(req:Request,res:Response):Promise<void>=>{
             res.status(400).json({message:"Invalid credentials"})
             return;
         }
-        await genToken(existingUser._id,res)
+        const token=await genToken(existingUser._id)
         res.status(200).json({message:"Login successful",
             user:{
                 id:existingUser._id,
                 name:existingUser.name,
                 email:existingUser.email
-            }
+            },
+            token
         })
         
     }
