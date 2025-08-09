@@ -86,13 +86,3 @@ export const checkAuth = async(req:Request,res:Response):Promise<void>=>{
 
 }
 
-export const logout=async(req:Request,res:Response):Promise<void>=>{
-    try{
-        res.clearCookie("token",{maxAge:0})
-        res.status(200).json({message:"Logout successful"})
-    }
-    catch(error:any){
-        console.error(" Logout Error",error.message)
-        res.status(500).json({message:"Internal server error"})
-    }
-}
