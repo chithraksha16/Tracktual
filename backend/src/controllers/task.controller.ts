@@ -13,6 +13,7 @@ type TaskBody={
     const {title,description,tag,duration}=req.body;
     try{
         if(!title || !description || !tag || !duration){
+            res.status(400).json({message:"All feilds are required"})
             return;
         }
         const task=await Work.create({
@@ -27,6 +28,5 @@ type TaskBody={
         console.error("Task not posted",error)
         res.status(400).json({message:"Task not Posted"})
     }
-
 
 }
