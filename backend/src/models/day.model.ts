@@ -49,7 +49,8 @@ const daySchema=new Schema<IDay>({
                 default: new Date
             }
         }],
-        required:true
+        required:true,
+        ref:'Work'
     }
 
 },{
