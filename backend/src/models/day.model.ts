@@ -1,18 +1,10 @@
 import mongoose, {Document, Schema,Types } from "mongoose";
 
 
-type task={
-    userId:Types.ObjectId,
-    title:string,
-    description:string,
-    duration:number,
-    tag:string,
-    createdAt:Date
-}
 
 interface IDay extends Document{
     userId:Types.ObjectId,
-    entries: task[],
+    entries: Types.ObjectId
 }
 
 
@@ -20,38 +12,14 @@ interface IDay extends Document{
 const daySchema=new Schema<IDay>({
     userId:{
         type:Schema.Types.ObjectId,
+        ref:'User',
         required:true
     },
-    entries:{
-        type:[{
-            userId:{
-                type:Schema.Types.ObjectId,
-                required:true
-            },
-            title:{
-                type:String,
-                required:true
-            },
-            description:{
-                type:String,
-                required:true
-            },
-            duration:{
-                type:Number,
-                required:true
-            },
-            tag:{
-                type:String,
-                required:true
-            },
-            createdAt:{
-                type:Date,
-                default: new Date
-            }
-        }],
+    entries:[{
+        type:Types.ObjectId,
         required:true,
         ref:'Work'
-    }
+    }]
 
 },{
     timestamps:true
