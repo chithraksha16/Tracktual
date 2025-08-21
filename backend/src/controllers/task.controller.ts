@@ -1,3 +1,4 @@
+
 import Day from "../models/day.model";
 import Work from "../models/work.model";
 import { Request,Response } from "express";
@@ -9,7 +10,7 @@ type TaskBody={
     duration:number
 }
 
- export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<void>=>{
+export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<void>=>{
     const {title,description,tag,duration}=req.body;
     const userId=req.user
     try{
@@ -49,3 +50,43 @@ type TaskBody={
     }
 
 }
+
+
+
+export const deleteTask=async(req:Request<{id:string}>,res:Response):Promise<void>=>{
+    try{
+        const {id}=req.params
+        await Work.findByIdAndDelete(id)
+        res.status(200).json({message:"Task deleted"})
+    }
+    catch(error:unknown){
+        console.error("Error deleting task", error);
+        res.status(500).json({ message: "Server error" });
+    }
+}
+
+
+
+export const getDayTasks = async (req: Request,res: Response): Promise<void> => {
+const userId = req.user;
+
+const now = new Date();
+
+try {
+    const day = await Day.findOne({
+    userId,
+    startDay: { $lte: now },
+    endDay: { $gte: now },
+    }).populate("entries")
+
+    if (!day) {
+    res.status(404).json({ message: "No tasks found for today" });
+    return;
+    }
+    res.status(200).json({ day });
+
+} catch (error: unknown) {
+    console.error("Error fetching tasks", error);
+    res.status(500).json({ message: "Server error" });
+}
+};
