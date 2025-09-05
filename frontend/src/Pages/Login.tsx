@@ -10,11 +10,11 @@ const Login = () => {
       </div>
       <div className="flex flex-col px-4  gap-2">
         <label htmlFor="email1">Email:</label>
-        <input className="w-full border border-gray-500 rounded"  type="email" name="email" id="email1"  />
+        <input className="w-full border border-gray-500 rounded placeholder:px-2 text-md"  type="email" name="email" id="email1" placeholder="ex:jhon@gmail.com" required />
       </div>
       <div className="flex flex-col px-4  gap-2">
         <label htmlFor="password1">Password:</label>
-        <input className="w-full border border-gray-500 rounded" type="password" name="password" id="password1" />
+        <input className="w-full border border-gray-500 rounded placeholder:px-2" type="password" name="password" id="password1" placeholder="**********" required/>
       </div>
       <div className="flex justify-center py-1">
         <button className="px-15 py-0.5 bg-blue-600 rounded">Login</button>
