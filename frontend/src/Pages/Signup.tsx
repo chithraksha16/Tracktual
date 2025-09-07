@@ -19,8 +19,8 @@ const Signup = () => {
         <label htmlFor="password1">Password:</label>
         <input className="w-full border border-gray-500 rounded placeholder:px-2" type="password" name="password" id="password1" placeholder="*************" />
       </div>
-      <div className="flex justify-center py-1">
-        <button className="px-15 py-0.5 bg-blue-600 rounded">Signup</button>
+      <div className="flex justify-center py-3 w-full px-4">
+        <button className="w-full py-0.5 bg-blue-600 rounded">Signup</button>
       </div>
       </div>
     </div>
