@@ -2,8 +2,8 @@
 
 const Track = () => {
   return (
-    <div>
-      track
+    <div >
+     track
     </div>
   )
 }
