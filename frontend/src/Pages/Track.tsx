@@ -2,7 +2,7 @@
 
 const Track = () => {
   return (
-    <div >
+    <div className=" w-full max-w-7xl bg-white" >
      track
     </div>
   )
