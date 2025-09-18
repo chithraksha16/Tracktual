@@ -2,7 +2,23 @@ import User from "../models/auth.model";
 import bcrypt from 'bcryptjs'
 import {Request,Response} from 'express'
 import { genToken } from "../utils/token.utils";
+import {z} from 'zod'
 
+
+
+export const signupSchema=z.object({
+    body:z.object({
+        name:z.string().min(3,"Name is required"),
+        email:z.string().email("email is required"),
+        password:z.string().min(6),
+    }),
+})
+export const loginSchema=z.object({
+    body:z.object({
+        email:z.string().email(),
+        password:z.string().min(6),
+    }),
+})
 
 export const signup=async(req:Request,res:Response):Promise<void>=>{
     const {name,email,password}=req.body;

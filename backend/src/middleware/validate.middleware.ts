@@ -1,6 +1,5 @@
-import { error } from "console";
 import { Request,Response,NextFunction } from "express";
-import { ZodSchema } from "zod/v3";
+import { ZodSchema } from "zod";
 
 
 export const validate=(schema:ZodSchema<any>)=>(req:Request,res:Response,next:NextFunction)=>{
@@ -13,6 +12,7 @@ export const validate=(schema:ZodSchema<any>)=>(req:Request,res:Response,next:Ne
     if(!result.success){
         res.status(400).json({errors:result.error.format()});
     }
+   
 
     return next()
 
