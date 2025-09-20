@@ -1,7 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { connectDB } from './utils/db'
-import cookieParser from 'cookie-parser'
 import authRouter from './routes/auth.route'
 import taskRouter from './routes/task.route'
 dotenv.config()
@@ -13,7 +12,6 @@ const PORT:number=parseInt(process.env.PORT || "3000",10)
 
 
 app.use(express.json());
-app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth',authRouter);
