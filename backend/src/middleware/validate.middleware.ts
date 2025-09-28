@@ -12,7 +12,7 @@ export const validate=(schema:ZodSchema<any>)=>(req:Request,res:Response,next:Ne
     if(!result.success){
         res.status(400).json({errors:result.error.format()});
     }
-   
+
 
     return next()
 
