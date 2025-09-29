@@ -1,7 +1,8 @@
-import {Divide, TextAlignStart,X} from 'lucide-react'
+import { TextAlignStart,X} from 'lucide-react'
 import { useState } from 'react'
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
+  
   const handleOpen=()=>{
     setIsOpen(!isOpen)
   }
