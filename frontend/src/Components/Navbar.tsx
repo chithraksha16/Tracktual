@@ -18,10 +18,21 @@ const Navbar = () => {
         <a href="">About</a>
         <a href="">Track</a>
       </div>
-      <div onClick={handleOpen}>
-      {isOpen  ? <X />: <TextAlignStart />}
+      <div className='flex sm:hidden justify-between' onClick={handleOpen}>
+        {isOpen ? <X />: <TextAlignStart /> }
       </div>
     </div>
+    <div className='hidden z-50' >
+      {isOpen && (
+        <div className='sm:hidden flex justify-end'>
+        <div className='flex flex-col px-4'>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Track</a>
+        </div>
+        </div>
+    ) }
+      </div>
     </div>
     </div>
     </>
