@@ -22,9 +22,9 @@ const Navbar = () => {
         {isOpen ? <X />: <TextAlignStart /> }
       </div>
     </div>
-    <div className='hidden z-50' >
+    <div className='absolute z-50 right-auto' >
       {isOpen && (
-        <div className='sm:hidden flex justify-end'>
+        <div className='sm:hidden flex flex-col justify-end'>
         <div className='flex flex-col px-4'>
         <a href="">Home</a>
         <a href="">About</a>
