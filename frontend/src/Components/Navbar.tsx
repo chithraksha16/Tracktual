@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
     </div>
     <div className='absolute z-50 ' >
-      /*todo sidebar */
+      /*todo sidebar and responsive */
       <div className='flex flex-col'>
       {isOpen && (
         <div className='sm:hidden flex flex-col justify-end'>
