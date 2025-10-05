@@ -2,7 +2,18 @@
 const Footer = () => {
   return (
     <div>
-      Footer
+    <div>
+      <h1></h1>
+    </div>
+    <div>
+      <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      </ul>
+    </div>
     </div>
   )
 }
