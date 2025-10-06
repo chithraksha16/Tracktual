@@ -5,6 +5,7 @@ import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Track from './Pages/Track'
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
 function App() {
 
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path='/login'  element={<Login/>}/>
           <Route path='/track'  element={<Track/>}/>
         </Routes>
-
+        <Footer/>
       </div>
     </>
   )
