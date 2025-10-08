@@ -3,7 +3,10 @@
 const Home = () => {
   return (
     <div>
-      Home
+    <div>
+      <div>Track Your daily work</div>
+      <div></div>
+    </div>
     </div>
   )
 }
