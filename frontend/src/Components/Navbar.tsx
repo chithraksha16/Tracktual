@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className='flex flex-col'>
       {isOpen && (
         <div className='sm:hidden flex flex-col justify-end'>
-        <div className='flex flex-col px-4'>
+        <div className='flex text-base flex-col px-4'>
         <a href="">Home</a>
         <a href="">About</a>
         <a href="">Track</a>

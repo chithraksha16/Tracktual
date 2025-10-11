@@ -7,7 +7,7 @@ const Footer = () => {
     </div>
     /*todo:responsive footer */
     <div className="flex">
-      <ul className="flex gap-3 text-sm">
+      <ul className="flex gap-3 text-sm sm:text-base">
       <li><a href="">Home</a></li>
       <li><a href="">Tarck</a></li>
       <li><a href="">Term & services</a></li>

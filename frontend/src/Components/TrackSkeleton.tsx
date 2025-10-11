@@ -3,7 +3,11 @@
 const TrackSkeleton = () => {
   return (
     <div>
-      Skeleton
+      <div>
+        <div>
+          <div>skeleton</div>
+        </div>
+      </div>
     </div>
   )
 }
