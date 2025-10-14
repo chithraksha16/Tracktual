@@ -22,12 +22,11 @@ const Navbar = () => {
         {isOpen ? <X />: <TextAlignStart /> }
       </div>
     </div>
-    <div className='absolute z-50 ' >
-      /*todo sidebar and responsive */
+    <div className='absolute z-50 flex items-end ' >
       <div className='flex flex-col'>
       {isOpen && (
         <div className='sm:hidden flex flex-col justify-end'>
-        <div className='flex text-base flex-col px-4'>
+        <div className='flex text-base flex-col gap-10 px-20 bg-gray-800 w-full h-screen'>
         <a href="">Home</a>
         <a href="">About</a>
         <a href="">Track</a>

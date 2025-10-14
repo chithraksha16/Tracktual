@@ -1,11 +1,10 @@
 
 const Footer = () => {
   return (
-    <div className="w-full h-auto absolute bottom-0 flex flex-row justify-around items-center p-1.5 bg-gradient-to-r from-15% from-blue-500 to-black">
+    <div className="w-full max-h-screen absolute bottom-0 flex flex-row justify-around items-center bg-gradient-to-r from-15% from-blue-500 to-black">
     <div className="flex">
       <h1 className="font-bold text-base">Tracktual</h1>
     </div>
-    /*todo:responsive footer */
     <div className="flex">
       <ul className="flex gap-3 text-sm sm:text-base">
       <li><a href="">Home</a></li>
