@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className='absolute  z-50 flex items-end ' >
       <div className='flex flex-col'>
       {isOpen && (
-        <div className='sm:hidden flex flex-col justify-end  fixed'>
+        <div className='sm:hidden flex flex-col justify-end'>
         <div className='flex text-base flex-col gap-10 px-20 bg-gradient-to-tr from-blue-900 to-70% to-gray-900 w-full h-screen'>
         <a href="">Home</a>
         <a href="">About</a>
