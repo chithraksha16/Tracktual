@@ -10,7 +10,6 @@ const Footer = () => {
       <li><a href="">Home</a></li>
       <li><a href="">Tarck</a></li>
       <li><a href="">Term & services</a></li>
-      <li><a href="">About</a></li>
       </ul>
     </div>
     </div>
