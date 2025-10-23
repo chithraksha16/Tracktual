@@ -22,6 +22,7 @@ const Navbar = () => {
         {isOpen ? <X />: <TextAlignStart /> }
       </div>
     </div>
+
     <div className='absolute  z-50 flex  ' >
       <div className='flex flex-col'>
       {isOpen && (
@@ -34,7 +35,7 @@ const Navbar = () => {
         </div>
     ) }
     </div>
-      </div>
+    </div>
     </div>
     </div>
     </>
