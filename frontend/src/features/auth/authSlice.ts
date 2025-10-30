@@ -43,6 +43,24 @@ export const signupUser = createAsyncThunk(
     }
   }
 );
+export const loginUser = createAsyncThunk(
+  "auth/loginUser",
+  async (
+    credentials: { email: string; password: string },
+    { rejectWithValue }
+  ) => {
+    try {
+      const res = await axios.post("https://example.com/api/login", credentials);
+
+      localStorage.setItem("token", res.data.token);
+      return res.data;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.response?.data?.message || "Login failed. Please try again."
+      );
+    }
+  }
+);
 
   const auth=createSlice({
     name:"auth",
