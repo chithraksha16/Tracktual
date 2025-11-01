@@ -66,6 +66,11 @@ export const loginUser = createAsyncThunk(
     name:"auth",
     initialState,
     reducers:{
+      logout: (state) => {
+      state.user = null;
+      state.token = null;
+      localStorage.removeItem("token");
+    },
         
 
     }
