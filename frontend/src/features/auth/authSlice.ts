@@ -71,7 +71,21 @@ export const loginUser = createAsyncThunk(
       state.token = null;
       localStorage.removeItem("token");
     },
-        
-
+    },
+    extraReducers: (builder) => {
+    // Handle signup
+    builder
+      .addCase(signupUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(
+        signupUser.fulfilled,
+        (state, action: PayloadAction<{ user: User; token: string }>) => {
+          state.loading = false;
+          state.user = action.payload.user;
+          state.token = action.payload.token;
+        }
+      )
     }
   })
