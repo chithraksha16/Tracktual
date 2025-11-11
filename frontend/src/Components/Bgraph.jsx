@@ -3,7 +3,9 @@ import React from 'react'
 const Bgraph = () => {
   return (
     <div>
-      graph
+    <div>
+      bar graph and used hours and visulization
+    </div>
     </div>
   )
 }
