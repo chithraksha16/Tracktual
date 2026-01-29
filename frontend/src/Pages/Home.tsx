@@ -8,9 +8,7 @@ const Home = () => {
           <h1 className="sm:text-2xl text-xl font-ADLaMDisplay text-center">Track Your Daily Work</h1>
           <p className="sm:text-base text-sm font-mono text-center px-2">Keep track to stay focused and productive.</p>
         </div>
-        <div>
-          <div>Some content of track here</div>
-        </div>
+        
       
     </div>
     </div>
