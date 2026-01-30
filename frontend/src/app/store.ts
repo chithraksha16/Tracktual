@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authSlice from '../features/auth/authSlice'
+import authSlice from '../Redux/authSlice'
 
 
 export const store=configureStore({
@@ -7,3 +7,8 @@ export const store=configureStore({
 authSlice:authSlice
     }
 })
+
+
+
+export type RootState=ReturnType<typeof store.getState>
+export type AppDispatch=typeof store.dispatch

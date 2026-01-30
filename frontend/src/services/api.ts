@@ -29,7 +29,25 @@ api.interceptors.response.use(
             removeToken()
             window.location.href='/login'
         }
-         return Promise.reject(error)
+        return Promise.reject(error)
     }
-   
 );
+
+
+export const authAPI={
+register:(data:{
+    name:string,
+    email:string,
+    password:string
+})=>api.post('/signup',data),
+login:(data:{
+    email:string,
+    password:string
+})=>api.post('/login',data),
+checkAuth:()=>api.get('/checkAuth')
+}
+
+
+
+
+export default api;
