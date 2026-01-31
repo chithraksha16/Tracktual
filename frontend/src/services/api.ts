@@ -39,12 +39,12 @@ register:(data:{
     name:string,
     email:string,
     password:string
-})=>api.post('/signup',data),
+})=>api.post('/auth/signup',data),
 login:(data:{
     email:string,
     password:string
-})=>api.post('/login',data),
-checkAuth:()=>api.get('/checkAuth')
+})=>api.post('/auth/login',data),
+checkAuth:()=>api.get('/auth/checkAuth')
 }
 
 
