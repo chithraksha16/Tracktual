@@ -1,4 +1,3 @@
-
 import Day from "../models/day.model";
 import Work from "../models/work.model";
 import { Request,Response } from "express";
@@ -14,7 +13,7 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
     const {title,description,tag,duration}=req.body;
     const userId=req.user
     try{
-        if(!title || !description || !tag || !duration){
+        if(!title || !description || !tag || !duration===undefined){
             res.status(400).json({message:"All feilds are required"})
             return;
         }
@@ -36,7 +35,7 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
             startDay,
             endDay
         },{
-            $setOnInsert: { startDay, endDay },
+        $setOnInsert: { startDay, endDay },
         $addToSet: { entries: task._id }
         },{
             upsert: true, new: true 
@@ -55,9 +54,31 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
 
 export const deleteTask=async(req:Request<{id:string}>,res:Response):Promise<void>=>{
     try{
+        const userId=req.user
         const {id}=req.params
-        await Work.findByIdAndDelete(id)
-        res.status(200).json({message:"Task deleted"})
+
+
+
+    if(!userId){
+    res.status(400).json({message:"Unauthorized access"})
+}
+
+    const task= await Work.findByIdAndDelete(id);
+
+
+    if(!task){
+        res.status(404).json({message:"Task not found"})
+        return
+    }
+
+    await Day.findOneAndUpdate(
+        {userId,entries:id},
+        {$pull:{entries:id}},
+        {new:true}
+    )
+
+
+    res.status(200).json({message:"Task deleted"})
     }
     catch(error:unknown){
         console.error("Error deleting task", error);
