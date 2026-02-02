@@ -1,9 +1,11 @@
 import {  useState } from "react"
 import {useAuth} from '../hooks/useAuth'
-
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Signup = () => {
+
+const navigate=useNavigate();
 
 interface formVaribale{
   name:string,
@@ -26,6 +28,7 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
 
 }
 
+
   const {register}=useAuth();
 
 
@@ -33,6 +36,7 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
       e.preventDefault();
       try{
       await register(formState)
+      navigate('/')
       }
       catch(err:any){
         console.error(err.response?.data)
@@ -71,6 +75,9 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
         onChange={handleChange}
         value={formState.password}
         className="w-full border border-gray-500 rounded placeholder:px-2 px-2" type="password" name="password" id="password1" placeholder="*************" />
+      </div>
+      <div className="px-4 sm:text-sm text-[12px]">
+        <p className="">Already have account? <Link to='/login' className="text-blue-600" >login</Link></p>
       </div>
       <div className="flex justify-center py-3 w-full px-4">
         <button className="w-full py-0.5 bg-blue-600 rounded">Signup</button>

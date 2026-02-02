@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
 import { type AppDispatch, type RootState } from "../app/store"
 import { useCallback } from "react"
-import { setError, setLoading, setUser } from "../Redux/authSlice"
+import { clearUser, setError, setLoading, setUser } from "../Redux/authSlice"
 import { authAPI } from "../services/api"
-import { setToken } from "../lib/auth"
+import { removeToken, setToken } from "../lib/auth"
 
 
 
@@ -82,7 +82,19 @@ const login=useCallback(
     },[dispatch])
 
 
+    const logout=useCallback(()=>{
+        try{
+            dispatch(clearUser())
+            removeToken()
+        }
+        catch(err:any){
+            dispatch(setError("Logout failed"))
+            throw err
+        }
+    },[])
 
-return {user,loading,error,register,login,checkAuthenticated}
+
+
+return {user,loading,error,register,login,checkAuthenticated,logout}
 
 }

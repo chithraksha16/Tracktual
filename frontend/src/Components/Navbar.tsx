@@ -1,8 +1,9 @@
 import { TextAlignStart,X} from 'lucide-react'
 import { useState } from 'react'
+import { useAuth } from '../hooks/useAuth'
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
-  
+  const {user,logout}=useAuth()
   const handleOpen=()=>{
     setIsOpen(!isOpen)
   }
@@ -13,14 +14,22 @@ const Navbar = () => {
     <div className="">
     <div className=" flex justify-between items-center w-full px-10 py-2 bg-gradient-to-r to-blue-700">
       <h1>Tracktual</h1>
+      {user?(
       <div className="sm:flex justify-between space-x-6 hidden ">
         <a href="">Home</a>
         <a href="">About</a>
         <a href="">Track</a>
+        <div>
+          <button onClick={logout}>Logout</button>
+        </div>
       </div>
+      ):("")
+}
+    {user?(
       <div className='flex sm:hidden justify-between' onClick={handleOpen}>
         {isOpen ? <X />: <TextAlignStart /> }
       </div>
+      ):("")}
     </div>
 
     <div className='absolute  z-50 flex  ' >
@@ -31,6 +40,9 @@ const Navbar = () => {
         <a href="">Home</a>
         <a href="">About</a>
         <a href="">Track</a>
+        <div>
+          <button onClick={logout}>Logout</button>
+        </div>
         </div>
         </div>
     ) }

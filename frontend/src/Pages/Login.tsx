@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useAuth } from "../hooks/useAuth"
+import { Link, useNavigate } from "react-router-dom"
 const Login = () => {
+  const navigate=useNavigate();
   interface formVaribale{
     email:string,
     password:string
@@ -25,8 +27,9 @@ const Login = () => {
   const {login}=useAuth();
   const handleSubmit=async(e:React.FormEvent):Promise<void>=>{
     e.preventDefault();
-     try{
+    try{
       await login(formData);
+      navigate('/')
       setFormData({
         email:"",
         password:""
@@ -60,6 +63,9 @@ const Login = () => {
         onChange={handleChange}
         value={formData.password}
         className="w-full border border-gray-500 rounded placeholder:px-2 px-2" type="password" name="password" id="password1" placeholder="**********" required/>
+      </div>
+      <div className="px-4 sm:text-sm text-[12px]">
+        <p className="">Don't have account? <Link to='/signup' className="text-blue-600" >signup</Link></p>
       </div>
       <div className="flex justify-center w-full px-4 py-3">
         <button className=" w-full py-0.5 bg-blue-600 rounded">Login</button>
