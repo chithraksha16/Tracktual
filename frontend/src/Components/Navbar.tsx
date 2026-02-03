@@ -1,6 +1,9 @@
 import { TextAlignStart,X} from 'lucide-react'
 import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
+import { VscGraph } from "react-icons/vsc";
+import { IoHomeOutline } from "react-icons/io5";
+import { MdLogout } from "react-icons/md";
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
   const {user,logout}=useAuth()
@@ -16,11 +19,10 @@ const Navbar = () => {
       <h1>Tracktual</h1>
       {user?(
       <div className="sm:flex justify-between space-x-6 hidden ">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Track</a>
+        <a href="" className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home </a>
+        <a href="" className='flex gap-2 items-center'><VscGraph size={15}/>Track</a>
         <div>
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout} className='flex gap-2 items-center'><MdLogout size={15}/>Logout</button>
         </div>
       </div>
       ):("")
@@ -32,22 +34,23 @@ const Navbar = () => {
       ):("")}
     </div>
 
+    {user?(
     <div className='absolute  z-50 flex  ' >
       <div className='flex flex-col'>
       {isOpen && (
         <div className=' relative inset-0 z-50 sm:hidden flex flex-col justify-end'>
-        <div className='flex text-base flex-col gap-10 px-20 bg-gradient-to-tr from-blue-900 to-70% to-gray-900 w-full h-screen'>
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Track</a>
+        <div className='flex text-base flex-col gap-10 px-15 py-10 bg-gradient-to-tr from-blue-900 to-70% to-gray-900 w-full h-screen'>
+        <a href="" className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home</a>
+        <a href="" className='flex gap-2 items-center'><VscGraph size={15}/>Track</a>
         <div>
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout} className='flex gap-2 items-center'><MdLogout size={15}/>Logout</button>
         </div>
         </div>
         </div>
     ) }
     </div>
     </div>
+    ):("")}
     </div>
     </div>
     </>

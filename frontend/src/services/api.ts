@@ -48,6 +48,17 @@ checkAuth:()=>api.get('/auth/checkAuth')
 }
 
 
+export const taskAPI={
+    postTask:(data:{
+        title:string,
+        description:string,
+        duration:number,
+        tag:string})=>api.post('/task/addtask',data),
+    deleteTask:(id:string)=>api.delete(`/delete/${id}`),
+    getDayTask:()=>api.get('/task')
+}
+
+
 
 
 export default api;
