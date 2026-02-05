@@ -1,5 +1,5 @@
 import {useAuth} from '../hooks/useAuth'
-
+import TrackCard from '../Components/TrackCard'
 const Home = () => {
   const {user}=useAuth()
   return (
@@ -16,6 +16,10 @@ const Home = () => {
           <p className='text-left sm:text-2xl text-xl sm:px-20 px-2 py-10'>Welcome {user?.name}..!</p>
         </div>
         
+
+        <div>
+          <TrackCard/>
+        </div>
       
     </div>
     </div>
