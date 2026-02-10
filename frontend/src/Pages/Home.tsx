@@ -18,7 +18,7 @@ const Home = () => {
         
 
         <div>
-          <TrackCard/>
+          <TrackCard text='Even though your component is typed correctly.Even though your Even though your'/>
         </div>
       
     </div>
