@@ -1,5 +1,6 @@
 import {useAuth} from '../hooks/useAuth'
 import TrackCard from '../Components/TrackCard'
+import AddTask from '../Components/AddTask'
 const Home = () => {
   const {user}=useAuth()
   return (
@@ -22,6 +23,7 @@ const Home = () => {
         </div>
       
     </div>
+    <AddTask/>
     </div>
   )
 }
