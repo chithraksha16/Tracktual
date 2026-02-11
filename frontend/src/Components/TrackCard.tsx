@@ -1,3 +1,5 @@
+import { IoMdTime } from "react-icons/io";
+import { LuTags } from "react-icons/lu";
 import { useState } from "react"
 
 type TrackCardProps = {
@@ -16,18 +18,18 @@ const TrackCard = ({ text, wordLimit = 5 }: TrackCardProps) => {
     <div className="flex">
       <div
         className={`relative
-          bg-white/10 backdrop-blur-xl
+          bg-white/10 backdrop-blur-xl bg-radial-[at_50%_90%] from-[#22052d] from-20% to-[#0a3431]
           border border-white/20
           rounded-se-[40px] rounded-lg
           shadow-2xl
           p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-36`}`}
       >
-        <h1 className="sm:text-xl text-lg font-semibold">
-          Frontend State Management
+        <h1 className="sm:text-xl text-lg font-semibold ">
+        <span>Frontend State Management</span>
         </h1>
 
       <div className={isExpanded ? ``:'flex items-center'}>
-        <p className="text-white/70 mt-2 ">
+        <p className="text-white/70 mt-2  ">
           {displayText}
         
 
@@ -36,15 +38,15 @@ const TrackCard = ({ text, wordLimit = 5 }: TrackCardProps) => {
             onClick={() => setIsExpanded(!isExpanded)}
             className=" text-sm text-blue-600 hover:underline font-medium"
           >
-            {isExpanded ? "less" : "more"}
+            {isExpanded ? "read less" : "read more"}
           </button>
         )}
         </p>
         </div>
 
         <div className="flex mt-2 px-2 gap-5">
-          <h3 className="text-lg">Duration: 1hr 30min</h3>
-          <h3 className="text-lg">#coding</h3>
+          <h3 className="text-lg flex items-center gap-1.5"><IoMdTime size={20}/> <span>1hr 30min</span></h3>
+          <h3 className="text-lg flex items-center gap-1.5"><LuTags size={20}/> <span>#coding</span></h3>
         </div>
       </div>
     </div>
