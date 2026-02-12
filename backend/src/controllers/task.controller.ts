@@ -6,14 +6,15 @@ type TaskBody={
     title:string,
     description:string,
     tag:string,
-    duration:number
+    hours:number,
+    minutes:number
 }
 
 export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<void>=>{
-    const {title,description,tag,duration}=req.body;
+    const {title,description,tag,hours,minutes}=req.body;
     const userId=req.user
     try{
-        if(!title || !description || !tag || !duration===undefined){
+        if(!title || !description || !tag || !hours===undefined || !minutes===undefined ){
             res.status(400).json({message:"All feilds are required"})
             return;
         }
@@ -22,7 +23,8 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
             title,
             description,
             tag,
-            duration
+            hours,
+            minutes
         })
 
         const now=new Date(new Date())

@@ -5,7 +5,8 @@ export interface IWork{
     userId:Types.ObjectId,
     title:string,
     description:string,
-    duration:number,
+    hours:number,
+    minutes:number,
     tag:string,
     createdAt:Date
 }
@@ -30,7 +31,13 @@ const workSchema= new Schema<IWorkDocument>({
             type:String,
             required:true
         },
-        duration:{
+        hours:{
+            default:0,
+            type:Number,
+            required:true
+        },
+        minutes:{
+            default:0,
             type:Number,
             required:true
         },

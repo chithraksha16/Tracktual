@@ -52,7 +52,8 @@ export const taskAPI={
     postTask:(data:{
         title:string,
         description:string,
-        duration:number,
+        hours:number,
+        minutes:number,
         tag:string})=>api.post('/task/addtask',data),
     deleteTask:(id:string)=>api.delete(`/delete/${id}`),
     getDayTask:()=>api.get('/task')

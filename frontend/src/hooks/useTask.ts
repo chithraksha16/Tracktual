@@ -19,7 +19,8 @@ export const useTask=()=>{
     const addTaskItem=useCallback(
         async(data:{title:string,
         description:string,
-        duration:number,
+        hours:number,
+        minutes:number,
         tag:string})=>{
             dispatch(setLoading(true))
             try{
