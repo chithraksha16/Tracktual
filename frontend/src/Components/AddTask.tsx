@@ -14,14 +14,34 @@ const AddTask = () => {
       <div className="flex flex-col space-y-1">
         <label htmlFor="">Description:</label>
         <textarea
+        rows={4}
         className="border w-full rounded px-2"
         name="" id=""></textarea>     
         </div>
+        <div className="flex gap-2">
       <div className="flex flex-col space-y-1 ">
-        <label htmlFor="">Duartion:</label>
+        <label htmlFor="">Hours:</label>
+        <div className="flex items-center gap-1">
         <input
+        min={0}
+        max={23}
+        inputMode="numeric"
         className="border w-full rounded p-2"
-        type="number" placeholder="..." />
+        type="number" placeholder="00" />
+        <p className="text-lg font-mono">hr</p>
+        </div>
+      </div>
+      <div className="flex flex-col space-y-1 ">
+        <label htmlFor="">Minutes:</label>
+        <div className="flex items-center gap-1">
+        <input
+        min={0}
+        max={59}
+        inputMode="numeric"
+        className="border w-full rounded p-2"
+        type="number" placeholder="00" />
+        <p className="text-lg font-mono">min</p>
+        </div>
       </div>
       <div className="flex flex-col space-y-1">
         <label htmlFor="">Tag:</label>
@@ -29,6 +49,8 @@ const AddTask = () => {
         className="border w-full rounded p-2"
         type="text" />
       </div>
+      </div>
+      
       </div>
       <div className="flex justify-center mt-3 p-2">
         <button>ADD</button>
