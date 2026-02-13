@@ -10,3 +10,13 @@ body{
 @theme{
     --font-ADLaMDisplay:ADLaM Display,"sans-serif";
 }
+/* in index.css or global.css */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinner {
+  -moz-appearance: textfield;
+}

@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import { useAuth } from './hooks/useAuth'
 import { useEffect } from 'react'
+import AddTask from './Components/AddTask'
 
 function App() {
 
@@ -25,6 +26,7 @@ const {user,checkAuthenticated}=useAuth()
           <Route path='/' element={user?<Home/>:<Navigate to={'/login'}/>}/>
          <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+        <Route path='/addTask' element={user ? <AddTask/>:<Navigate to="/" />}/>
           <Route path='/track'  element={<Track/>}/>
         </Routes>
         <Footer/>

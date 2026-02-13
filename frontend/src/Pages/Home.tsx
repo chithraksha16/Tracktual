@@ -1,10 +1,9 @@
 import {useAuth} from '../hooks/useAuth'
 import TrackCard from '../Components/TrackCard'
-import AddTask from '../Components/AddTask'
 const Home = () => {
   const {user}=useAuth()
   return (
-    <div>
+    <div className='w-full'>
     <div className=" w-full flex flex-col justify-between p-2">
         <div className="w-full p-4 sm:p-6 space-y-2">
           
@@ -13,17 +12,27 @@ const Home = () => {
         </div>
 
 
-        <div>
-          <p className='text-left sm:text-2xl text-xl sm:px-20 px-2 py-10'>Welcome {user?.name}..!</p>
+        <p className=' sm:text-2xl text-lg font-bold'>Welcome back <span className='text-blue-400'>{user?.name}..!</span></p>
+          
+        <div className='w-full flex justify-center items-center sm:p-6 p-2 gap-10'>
+          <div>
+            <input className='border py-1 w-3xl rounded-lg' type="search" name="" id="" />
+          </div>
+          
+          <div>
+            <button className='px-3 py-1.5 border rounded'>Add Task</button>
+          </div>
         </div>
+
+        
         
 
-        <div>
+        <div className='mt-10'>
           <TrackCard text='Even though your component is typed correctly.Even though your Even though your'/>
         </div>
       
     </div>
-    <AddTask/>
+    
     </div>
   )
 }

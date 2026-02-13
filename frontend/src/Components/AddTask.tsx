@@ -2,7 +2,7 @@ const AddTask = () => {
   return (
     <>
       <div className="flex justify-center items-center min-h-screen">
-      <div className="max-w-sm border w-full p-10 rounded-lg">
+      <div className="max-w-sm border w-full p-10 rounded-lg bg-radial-[at_90%_10%] from-20% from-gray-900 to-black">
       <h1 className="text-center text-xl p-3">Add Task</h1>
       <div className="space-y-3">
       <div className="flex flex-col space-y-1">
@@ -26,7 +26,7 @@ const AddTask = () => {
         min={0}
         max={23}
         inputMode="numeric"
-        className="border w-full rounded p-2"
+        className="border w-full rounded p-2 no-spinner"
         type="number" placeholder="00" />
         <p className="text-lg font-mono">hr</p>
         </div>
@@ -38,7 +38,7 @@ const AddTask = () => {
         min={0}
         max={59}
         inputMode="numeric"
-        className="border w-full rounded p-2"
+        className="border w-full rounded p-2 no-spinner"
         type="number" placeholder="00" />
         <p className="text-lg font-mono">min</p>
         </div>
@@ -53,7 +53,7 @@ const AddTask = () => {
       
       </div>
       <div className="flex justify-center mt-3 p-2">
-        <button>ADD</button>
+        <button className="w-full py-1.5 border rounded bg-linear-to-r from-gray-950 to-cyan-950  hover:bg-linear-to-r hover:from-cyan-950 hover:to-gray-950">ADD</button>
       </div>
 
       </div>
