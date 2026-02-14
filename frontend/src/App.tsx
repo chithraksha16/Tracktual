@@ -9,13 +9,23 @@ import Footer from './Components/Footer'
 import { useAuth } from './hooks/useAuth'
 import { useEffect } from 'react'
 import AddTask from './Components/AddTask'
-
+import { Loader } from 'lucide-react'
 function App() {
 
-const {user,checkAuthenticated}=useAuth()
+const {user,loading,checkAuthenticated}=useAuth()
   useEffect(()=>{
     checkAuthenticated()
+
   },[checkAuthenticated])
+
+  console.log(user)
+
+
+  if(loading) return (
+    <div className='flex justify-center items-center h-screen'>
+    <Loader className='size-10 animate-spin'/>
+    </div>
+  )
 
   
   return (
@@ -23,11 +33,12 @@ const {user,checkAuthenticated}=useAuth()
       <div>
         <Navbar/>
         <Routes>
-          <Route path='/' element={user?<Home/>:<Navigate to={'/login'}/>}/>
+          
          <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
-        <Route path='/addTask' element={user ? <AddTask/>:<Navigate to="/" />}/>
+        <Route path="/addTask" element={user ? <AddTask/>:<Navigate to="/login" /> }/>
           <Route path='/track'  element={<Track/>}/>
+          <Route path='/' element={user?<Home/>:<Navigate to={'/login'}/>}/>
         </Routes>
         <Footer/>
       </div>

@@ -72,6 +72,7 @@ const login=useCallback(
         catch(err:any){
             const errMsg=err.response?.data?.message || "failed to fetch user";
             dispatch(setError(errMsg))
+            dispatch(setUser(null))
             throw err;
             
         }

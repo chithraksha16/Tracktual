@@ -14,7 +14,7 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
     const {title,description,tag,hours,minutes}=req.body;
     const userId=req.user
     try{
-        if(!title || !description || !tag || !hours===undefined || !minutes===undefined ){
+        if(!title || !description || !tag || !hours || !minutes ){
             res.status(400).json({message:"All feilds are required"})
             return;
         }
