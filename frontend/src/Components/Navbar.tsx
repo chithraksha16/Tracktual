@@ -4,6 +4,7 @@ import { useAuth } from '../hooks/useAuth'
 import { VscGraph } from "react-icons/vsc";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
   const {user,logout}=useAuth()
@@ -19,8 +20,8 @@ const Navbar = () => {
       <h1>Tracktual</h1>
       {user?(
       <div className="sm:flex justify-between space-x-6 hidden ">
-        <a href="" className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home </a>
-        <a href="" className='flex gap-2 items-center'><VscGraph size={15}/>Track</a>
+        <Link to='/' className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home </Link>
+        <Link to='track' className='flex gap-2 items-center'><VscGraph size={15}/>Track</Link>
         <div>
           <button onClick={logout} className='flex gap-2 items-center'><MdLogout size={15}/>Logout</button>
         </div>
@@ -40,8 +41,8 @@ const Navbar = () => {
       {isOpen && (
         <div className=' relative inset-0 z-50 sm:hidden flex flex-col justify-end'>
         <div className='flex text-base flex-col gap-10 px-15 py-10 bg-gradient-to-tr from-blue-900 to-70% to-gray-900 w-full h-screen'>
-        <a href="" className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home</a>
-        <a href="" className='flex gap-2 items-center'><VscGraph size={15}/>Track</a>
+        <Link to='/' className='flex gap-2 items-center'><IoHomeOutline size={15}/>Home</Link> 
+        <Link to='/track' className='flex gap-2 items-center'><VscGraph size={15}/>Track</Link>
         <div>
           <button onClick={logout} className='flex gap-2 items-center'><MdLogout size={15}/>Logout</button>
         </div>

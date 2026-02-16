@@ -50,6 +50,7 @@ const login=useCallback(
             const response= await authAPI.login(data)
             setToken(response.data.token)
             dispatch(setUser(response.data.user))
+            return response.data
         }
         catch(err:any){
             const errMsg=err.response?.data?.message ||"Login failed";
@@ -72,7 +73,6 @@ const login=useCallback(
         catch(err:any){
             const errMsg=err.response?.data?.message || "failed to fetch user";
             dispatch(setError(errMsg))
-            dispatch(setUser(null))
             throw err;
             
         }
