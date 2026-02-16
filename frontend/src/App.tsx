@@ -18,7 +18,9 @@ const {user,loading,checkAuthenticated}=useAuth()
 
   },[checkAuthenticated])
 
-  console.log(user)
+console.log("USER:", user)
+console.log("LOADING:", loading)
+
 
 
   if(loading) return (
@@ -33,12 +35,11 @@ const {user,loading,checkAuthenticated}=useAuth()
       <div>
         <Navbar/>
         <Routes>
-          
-         <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
+        <Route path='/' element={user?<Home/>:<Navigate to={'/login'}/>}/>
+        <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
-        <Route path="/addTask" element={user ? <AddTask/>:<Navigate to="/login" /> }/>
-          <Route path='/track'  element={<Track/>}/>
-          <Route path='/' element={user?<Home/>:<Navigate to={'/login'}/>}/>
+        <Route path="/addTask" element={user ? <AddTask/>:<Navigate to="/" /> }/>
+        <Route path='/track'  element={<Track/>}/>
         </Routes>
         <Footer/>
       </div>
