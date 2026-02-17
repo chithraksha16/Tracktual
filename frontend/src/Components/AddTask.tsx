@@ -1,4 +1,14 @@
+import { useState } from "react"
+
 const AddTask = () => {
+  interface Formvariable{
+    title:string,
+    description:string,
+    hours:number,
+    minutes:number,
+    tag:string
+  }
+  const [formData,setFormData]=useState<Formvariable>()
   return (
     <>
       <div className="flex justify-center items-center min-h-screen">
