@@ -1,5 +1,5 @@
 import {useAuth} from '../hooks/useAuth'
-import TrackCard from '../Components/TrackCard'
+
 const Home = () => {
   const {user}=useAuth()
   return (
@@ -27,9 +27,7 @@ const Home = () => {
         
         
 
-        <div className='mt-10'>
-          <TrackCard text='Even though your component is typed correctly.Even though your Even though your'/>
-        </div>
+        
       
     </div>
     
