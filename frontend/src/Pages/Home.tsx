@@ -23,10 +23,11 @@ const Home = () => {
           <div>
             <button className='px-3 py-1.5 border rounded'>Add Task</button>
           </div>
-          <div>
+          </div>
+          <div className='flex flex-col'>
             <TrackCard text='hello this the some basic text that tells nothing'/>
           </div>
-        </div>
+        
 
         
         

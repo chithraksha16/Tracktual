@@ -2,6 +2,7 @@ import { IoMdTime } from "react-icons/io";
 import { LuTags } from "react-icons/lu";
 import { useState } from "react"
 
+
 type TrackCardProps = {
   text: string
   wordLimit?: number
@@ -22,7 +23,7 @@ const TrackCard = ({ text, wordLimit = 5 }: TrackCardProps) => {
           border border-white/20
           rounded-se-[40px] rounded-lg
           shadow-2xl
-          p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-36`}`}
+          p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-40`}`}
       >
         <h1 className="sm:text-xl text-lg font-semibold ">
         <span>Frontend State Management</span>
@@ -48,6 +49,9 @@ const TrackCard = ({ text, wordLimit = 5 }: TrackCardProps) => {
           <h3 className="text-lg flex items-center gap-1.5"><IoMdTime size={20}/> <span>1hr 30min</span></h3>
           <h3 className="text-lg flex items-center gap-1.5"><LuTags size={20}/> <span>#coding</span></h3>
         </div>
+        {/* <div className="mt-1">
+          <button className="px-4 py-1 bg-red-800 text-white rounded">Delete</button>
+        </div> */}
       </div>
     </div>
   )
