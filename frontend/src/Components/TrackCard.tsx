@@ -19,11 +19,11 @@ const TrackCard = ({ text, wordLimit = 5 }: TrackCardProps) => {
     <div className="flex">
       <div
         className={`relative
-          bg-white/10 backdrop-blur-xl bg-radial-[at_50%_90%] from-[#22052d] from-20% to-[#0a3431]
-          border border-white/20
-          rounded-se-[40px] rounded-lg
+          backdrop-blur-xl bg-radial-[at_50%_-10%] from-[#2E1339] from-19% to-black to-65%
+          border-1 border-[#2E1339]
+          rounded-lg
           shadow-2xl
-          p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-40`}`}
+          p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-44`}`}
       >
         <h1 className="sm:text-xl text-lg font-semibold ">
         <span>Frontend State Management</span>
