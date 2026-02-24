@@ -7,8 +7,13 @@ body{
     font-family:ADLaM Display;
     src: url(../src/assets/fonts/ADLaMDisplay-Regular.ttf);
 }
-@theme{
-    --font-ADLaMDisplay:ADLaM Display,"sans-serif";
+@font-face {
+  font-family: Inter;
+  src: url(../src/assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+:root {
+  --font-ADLaMDisplay: ADLaM Display, "sans-serif";
+  --font-Inter: Inter, "sans-serif";
 }
 /* in index.css or global.css */
 .no-spinner::-webkit-outer-spin-button,
