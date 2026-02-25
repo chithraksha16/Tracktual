@@ -17,21 +17,23 @@ const TrackCard = ({ text, wordLimit = 6 }: TrackCardProps) => {
     : truncateWords(text, wordLimit)
 
   return (
-    <div className="flex">
+    <div className="flex px-1">
       <div
         className={`relative
           backdrop-blur-xl bg-radial-[at_50%_-10%] from-[#1b0b23] from-19% to-black to-65%
           border-1 border-[#2E1339]
           rounded-2xl
           shadow-2xl
-          p-6 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-44`}`}
+          p-7 w-md sm:w-sm max-w-md text-white ${isExpanded ? `h-auto`:`h-[180px]`}`}
       >
-        <div className="flex justify-end space-y-3">
+        <div className="flex justify-between gap-4~">
+        <div className="flex justify-end mt-[-5px] order-2">
         <div className="text-white flex "><PiStarFourFill className="drop-shadow-[0_2px_2px_rgba(255,255,255,0.5)]" size={16}/> <PiStarFourFill className="mt-3 drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]" size={9}/></div>
         </div>
-        <h1 className="sm:text-lg text-md font-Inter font-semibold tracking-wide ">
+        <h1 className="sm:text-lg text-md font-Inter font-semibold tracking-wide order-1 ">
         <span>Frontend State Management</span>
         </h1>
+        </div>
 
       <div className={isExpanded ? ``:'flex items-center'}>
         <p className="text-white/70 font-medium text-sm font-Inter mt-2  ">
@@ -53,8 +55,8 @@ const TrackCard = ({ text, wordLimit = 6 }: TrackCardProps) => {
           <h3 className="text-md flex font-Inter items-center gap-1.5"><IoMdTime size={20}/> <span>1hr 30min</span></h3>
           <h3 className="text-md flex font-Inter  items-center gap-1.5"><LuTags size={20}/> <span>#coding</span></h3>
         </div>
-        <div className=" flex justify-end">
-          <button className=" font-extralight flex  items-center gap-2 drop-shadow-[0_3px_4px_rgba(255,255,255,0.2)]"><HiArrowLongRight/> <span className="text-xs">Delete</span></button>
+        <div className=" flex sm:mt-0 mt-3 justify-end space-y-1 ">
+          <button className=" font-extralight flex  items-center gap-2 drop-shadow-[0_3px_4px_rgba(255,255,255,0.2)] hover:opacity-50"><HiArrowLongRight/> <span className="sm:text-xs text-[10px] tracking-widest">Delete</span></button>
         </div>
       </div>
     </div>
