@@ -14,16 +14,7 @@ const Home = () => {
 
 
         <p className=' sm:text-2xl text-lg font-bold'>Welcome back <span className='text-blue-400'>{user?.name}..!</span></p>
-          
-        {/* <div className='w-full flex justify-center items-center sm:p-6 p-2 gap-10'>
-          <div>
-            <input className='border py-1 w-3xl rounded-lg' type="search" name="" id="" />
-          </div>
-          
-          <div>
-            <button className='px-3 py-1.5 border rounded'>Add Task</button>
-          </div>
-          </div> */}
+       
           <div className='flex flex-col'>
             <TrackCard text='hello this the some basic text that tells nothing'/>
           </div>
