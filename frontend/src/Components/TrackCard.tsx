@@ -55,7 +55,7 @@ const TrackCard = ({ text, wordLimit = 6 }: TrackCardProps) => {
           <h3 className="text-md flex font-Inter items-center gap-1.5"><IoMdTime size={20}/> <span>1hr 30min</span></h3>
           <h3 className="text-md flex font-Inter  items-center gap-1.5"><LuTags size={20}/> <span>#coding</span></h3>
         </div>
-        <div className=" flex sm:mt-0 mt-3 justify-end space-y-1 ">
+        <div className=" flex  mt-4 justify-end space-y-1 ">
           <button className=" font-extralight flex  items-center gap-2 drop-shadow-[0_3px_4px_rgba(255,255,255,0.2)] hover:opacity-50"><HiArrowLongRight/> <span className="sm:text-xs text-[10px] tracking-widest">Delete</span></button>
         </div>
       </div>

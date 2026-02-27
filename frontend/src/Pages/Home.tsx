@@ -14,7 +14,7 @@ const Home = () => {
 
 
         <p className=' sm:text-2xl text-lg font-bold'>Welcome back <span className='text-blue-400'>{user?.name}..!</span></p>
-       
+      
           <div className='flex flex-col'>
             <TrackCard text='hello this the some basic text that tells nothing'/>
           </div>
