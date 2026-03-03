@@ -18,7 +18,7 @@ const Home = () => {
           
 
           <div className='w-full'>
-            <div className='flex'>
+            <div className='flex flex-wrap px-10'>
 
             </div>
 
