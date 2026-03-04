@@ -1,8 +1,9 @@
-import TrackCard from '../Components/TrackCard'
 import {useAuth} from '../hooks/useAuth'
+import { useTask } from '../hooks/useTask'
 
 const Home = () => {
-  const {user}=useAuth()
+  const {user,}=useAuth()
+  const {addTaskItem}=useTask()
   return (
     <div className='w-full'>
     <div className=" w-full flex flex-col justify-between p-2">
