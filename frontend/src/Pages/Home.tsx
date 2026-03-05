@@ -20,7 +20,7 @@ const Home = () => {
 
           <div className='w-full'>
             <div className='flex flex-wrap px-10'>
-
+            <h1 className='text-2xl'>Calendar Timeline</h1>
             </div>
 
           </div>
