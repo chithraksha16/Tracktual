@@ -1,6 +1,6 @@
 import {useAuth} from '../hooks/useAuth'
 import { useTask } from '../hooks/useTask'
-
+import {CalendarArrowDown} from 'lucide-react'
 const Home = () => {
   const {user,}=useAuth()
   const {addTaskItem}=useTask()
@@ -19,8 +19,11 @@ const Home = () => {
           
 
           <div className='w-full'>
-            <div className='flex flex-wrap px-10'>
-            <h1 className='text-2xl'>Calendar Timeline</h1>
+            <div className='flex flex-wrap sm:p-10 p-7'>
+              <div className='flex items-center gap-3'>
+            <h1 className='sm:text-2xl text-lg '>Calendar Timeline</h1>
+            <CalendarArrowDown size={18} className='stroke-2' />
+              </div>
             </div>
 
           </div>
