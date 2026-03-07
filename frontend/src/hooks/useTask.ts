@@ -24,7 +24,8 @@ export const useTask=()=>{
         tag:string})=>{
             dispatch(setLoading(true))
             try{
-                const response= await taskAPI.postTask(data)
+                const response= await taskAPI.postTask({...data, hours: Number(data.hours),
+  minutes: Number(data.minutes)})
                 dispatch(addTask(response.data))
                 return response.data
             }
@@ -58,8 +59,9 @@ export const useTask=()=>{
         dispatch(setLoading(true))
         try{
             const response=await taskAPI.getDayTask()
-            dispatch(setTask(response.data.task))
-            return response.data.task
+            console.log("API response:", response.data)
+            dispatch(setTask(response.data.day.entries))
+            return response.data.task.day.entries
         }
         catch(err:any){
             const errMsg=err.response?.data?.message || "Fetching task Failed"

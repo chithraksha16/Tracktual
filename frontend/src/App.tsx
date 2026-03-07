@@ -18,8 +18,7 @@ const {user,loading,checkAuthenticated}=useAuth()
 
   },[checkAuthenticated])
 
-console.log("USER:", user)
-console.log("LOADING:", loading)
+
 
 
 

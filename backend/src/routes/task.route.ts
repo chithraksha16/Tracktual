@@ -11,7 +11,7 @@ router.post("/addtask",authentication,postTask)
 
 router.delete("/delete/:id",authentication,deleteTask)
 
-router.get("/task",authentication,getDayTasks)
+router.get("/",authentication,getDayTasks)
 
 
 

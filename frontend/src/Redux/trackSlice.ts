@@ -42,8 +42,8 @@ const trackSlice=createSlice({
         setError:(state,action:PayloadAction<string>)=>{
             state.error=action.payload;
         },
-        setTask:(state,action:PayloadAction<{data:Task[]}>)=>{
-            state.item=action.payload.data;
+        setTask:(state,action:PayloadAction<Task[]>)=>{
+            state.item=action.payload;
             state.loading=false;
             state.error=null;
         },

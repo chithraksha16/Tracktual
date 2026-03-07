@@ -45,11 +45,13 @@ const AddTask = () => {
         minutes:0,
         tag:""
       })
+      
     } catch (err) {
       console.error(err);
     }
   };
 
+ 
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="max-w-sm border w-full p-10 rounded-lg bg-radial-[at_90%_10%] from-20% from-gray-900 to-black">
