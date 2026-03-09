@@ -114,3 +114,19 @@ try {
 }
 };
  
+
+ export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
+        const userId=req.user;
+        try{
+            if(!userId){
+                res.status(401).json({message:"Unauthorized access"})
+            }
+            const task= await Day.find()
+            res.status(200).json(task)
+            return
+        }
+        catch(err:any){
+            res.status(500).json({message:"Failed to fetch task"})
+        }
+
+}

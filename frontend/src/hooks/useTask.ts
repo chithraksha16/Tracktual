@@ -52,6 +52,9 @@ export const useTask=()=>{
             err.response?.data?.message || 'Failed to delete task';
         dispatch(setError(errorMsg));
         }
+        finally{
+            dispatch(setLoading(false))
+        }
     },[dispatch])
 
 
@@ -60,18 +63,41 @@ export const useTask=()=>{
         try{
             const response=await taskAPI.getDayTask()
             console.log("API response:", response.data)
-            dispatch(setTask(response.data.day.entries))
-            return response.data.task.day.entries
+            // dispatch(setTask(response.data.day.entries))
+            // return response.data.day.entries
         }
         catch(err:any){
             const errMsg=err.response?.data?.message || "Fetching task Failed"
             dispatch(setError(errMsg))
             throw err
-
+        }
+        finally{
+            dispatch(setLoading(false))
         }
     },[dispatch])
 
 
-    return {item,loading,error,block,addTaskItem,deleteTaskItem,getDayTasks}
+    const getAllTask=useCallback(async()=>{
+        dispatch(setLoading(true))
+        try{
+            const response=await taskAPI.getAllTask()
+            console.log(response.data)
+            dispatch(setTask(response.data.entries))
+            return response.data.entries
+        }
+        catch(err:any){
+            const errMsg=err.response?.data?.message || "Failed to fetch task"
+            dispatch(setError(errMsg))
+        }
+        finally{
+            dispatch(setLoading(false))
+        }
+
+    },
+    [dispatch]
+)
+
+
+    return {item,loading,error,block,addTaskItem,deleteTaskItem,getDayTasks,getAllTask}
 
 }
