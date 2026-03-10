@@ -4,12 +4,12 @@ import {CalendarArrowDown} from 'lucide-react'
 
 const Home = () => {
 
-  const {item,getDayTasks,getAllTask}=useTask()
+  const {item,getAllTask}=useTask()
 
   useEffect(() => {
-    getDayTasks()
+    
     getAllTask()
-  }, [getDayTasks,getAllTask])
+  }, [getAllTask])
 
   return (
     <div className='w-full'>
@@ -35,7 +35,7 @@ const Home = () => {
 
               {item?.map((items)=>(
                   <div key={items._id} className='max-w-md h-44 border rounded-lg bg-linear-to-br from-25% from-[#000] to-80% to-[#3B022B]'>
-                  <h1>{items.title}</h1>
+                  <h1 className='text-white'>{items.hours}</h1>
                   </div>
                 
               ))}

@@ -115,13 +115,14 @@ try {
 };
  
 
- export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
+export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
         const userId=req.user;
         try{
             if(!userId){
                 res.status(401).json({message:"Unauthorized access"})
             }
-            const task= await Day.find()
+            const task= await Day.find({userId})
+            .populate("entries")
             res.status(200).json(task)
             return
         }
