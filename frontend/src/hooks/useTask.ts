@@ -82,8 +82,8 @@ export const useTask=()=>{
         try{
             const response=await taskAPI.getAllTask()
             console.log(response.data)
-            dispatch(setTask(response.data))
-            return response.data
+            dispatch(setTask(response.data.createdAt))
+            return response.data.createdAt
         }
         catch(err:any){
             const errMsg=err.response?.data?.message || "Failed to fetch task"
