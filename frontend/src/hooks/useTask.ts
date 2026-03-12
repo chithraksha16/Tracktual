@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import  {type AppDispatch, type RootState } from "../app/store"
 import { useCallback } from "react"
-import { setError, setLoading,addTask, setTask,deleteTask } from "../Redux/trackSlice"
+import { setError, setLoading,addTask, setTask,setDay,deleteTask } from "../Redux/trackSlice"
 import { taskAPI } from "../services/api"
 
 
@@ -82,8 +82,8 @@ export const useTask=()=>{
         try{
             const response=await taskAPI.getAllTask()
             console.log(response.data)
-            dispatch(setTask(response.data.createdAt))
-            return response.data.createdAt
+            dispatch(setDay(response.data))
+            return response.data
         }
         catch(err:any){
             const errMsg=err.response?.data?.message || "Failed to fetch task"
