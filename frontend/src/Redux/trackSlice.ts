@@ -47,8 +47,8 @@ const trackSlice=createSlice({
             state.loading=false;
             state.error=null;
         },
-        setDay:(state,action:PayloadAction<Day>)=>{
-            state.block.push(action.payload);
+        setDay:(state,action:PayloadAction<Day[]>)=>{
+            state.block=action.payload;
         },
         addTask:(state,action:PayloadAction<Task>)=>{
             state.item.unshift(action.payload)
