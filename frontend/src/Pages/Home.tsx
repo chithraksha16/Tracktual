@@ -32,17 +32,20 @@ const Home = () => {
             <h1 className='sm:text-2xl text-lg '>Calendar Timeline</h1>
             <CalendarArrowDown size={18} className='stroke-2' />
               </div>
-
+<div className=' mt-5 flex  gap-10'>
               {block?.map((blocks,idx)=>(
-                  <div key={idx} className='max-w-md h-44 border rounded-lg bg-linear-to-br from-25% from-[#000] to-80% to-[#3B022B]'>
-                  <h1 className='text-white'>{new Date(blocks.startDay).toLocaleDateString("en-IN", {
+                
+                  <div key={idx} className='w-full h-44 border rounded-lg bg-linear-to-br from-25% from-[#000] to-80% to-[#3B022B] flex justify-center items-center space-y-2'>
+                  <h1 className='text-white sm:text-2xl text-xl '>{new Date(blocks.startDay).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "long",
     year: "numeric"
   })}</h1>
                   </div>
+                  
                 
               ))}
+              </div>
             </div>
 
           </div>
