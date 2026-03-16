@@ -83,6 +83,7 @@ export const useTask=()=>{
             const response=await taskAPI.getAllTask()
             console.log(response.data)
             dispatch(setDay(response.data))
+            dispatch(setTask(response.data))
             return response.data
         }
         catch(err:any){
