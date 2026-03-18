@@ -120,6 +120,7 @@ export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
         try{
             if(!userId){
                 res.status(401).json({message:"Unauthorized access"})
+                return
             }
             const task= await Day.find({userId})
             .populate("entries")
@@ -130,4 +131,22 @@ export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
             res.status(500).json({message:"Failed to fetch task"})
         }
 
+}
+
+
+export const getTaskfromParticularDate=async(req:Request,res:Response):Promise<void>=>{
+    const userId=req.user;
+    const dateId=req.params;
+    try{
+        if(!userId){
+            res.status(401).json({message:"Unauthorized events"})
+        return
+        }
+        if(!dateId){
+            res.status(400).json({message:"Not found this date"})
+        }
+    }
+    catch(err:any){
+        
+    }
 }
