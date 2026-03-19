@@ -28,8 +28,8 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
         })
 
         const now=new Date(new Date())
-        const startDay=new Date(now.setHours(0,0,0,0))
-        const endDay=new Date(now.setHours(23,59,59,999))
+        const startDay=new Date(now.setUTCHours(0,0,0,0))
+        const endDay=new Date(now.setUTCHours(23,59,59,999))
 
 
         await Day.findOneAndUpdate({
@@ -136,7 +136,7 @@ export const getAlltask=async(req:Request,res:Response):Promise<void>=>{
 
 export const getTaskfromParticularDate=async(req:Request,res:Response):Promise<void>=>{
     const userId=req.user;
-    const dateId=req.params;
+    const {dateId}=req.params;
     try{
         if(!userId){
             res.status(401).json({message:"Unauthorized events"})
@@ -145,8 +145,25 @@ export const getTaskfromParticularDate=async(req:Request,res:Response):Promise<v
         if(!dateId){
             res.status(400).json({message:"Not found this date"})
         }
+        const selectedDate = new Date(dateId);
+
+const start = new Date(selectedDate);
+start.setUTCHours(0, 0, 0, 0);
+
+const end = new Date(selectedDate);
+end.setUTCHours(23, 59, 59, 999);
+
+const task = await Day.find({
+  user: userId,
+  date: {
+    $gte: start,
+    $lte: end,
+  },
+}).populate("entries");
+        res.status(200).json(task)
     }
     catch(err:any){
-        
+        console.error("failed to fetch task",err)
+        res.status(500).json({message:"Internal server error"})
     }
 }

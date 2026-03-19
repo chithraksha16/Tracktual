@@ -1,5 +1,5 @@
 import express from "express";
-import {postTask,deleteTask,getDayTasks, getAlltask} from '../controllers/task.controller'
+import {postTask,deleteTask, getAlltask,getTaskfromParticularDate} from '../controllers/task.controller'
 import {authentication} from '../middleware/auth.middleware'
 
 
@@ -13,6 +13,7 @@ router.delete("/delete/:id",authentication,deleteTask)
 
 // router.get("/",authentication,getDayTasks)
 router.get("/",authentication,getAlltask)
+router.get('/taskall/:dateId',authentication,getTaskfromParticularDate)
 
 
 
