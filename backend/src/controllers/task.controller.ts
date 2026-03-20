@@ -28,16 +28,18 @@ export const postTask=async(req:Request<{},{},TaskBody>,res:Response):Promise<vo
         })
 
         const now=new Date(new Date())
-        const startDay=new Date(now.setUTCHours(0,0,0,0))
-        const endDay=new Date(now.setUTCHours(23,59,59,999))
+        const date = now.toISOString().split('T')[0];
+        const startDay=new Date(now.setHours(0,0,0,0))
+        const endDay=new Date(now.setHours(23,59,59,999))
 
 
         await Day.findOneAndUpdate({
             userId,
-            startDay,
-            endDay
+           startDay: date,
+           endDay:date
+
         },{
-        $setOnInsert: { startDay, endDay },
+        $setOnInsert: { date,startDay, endDay },
         $addToSet: { entries: task._id }
         },{
             upsert: true, new: true 
