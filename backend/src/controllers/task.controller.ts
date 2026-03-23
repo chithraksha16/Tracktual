@@ -67,8 +67,6 @@ export const deleteTask=async(req:Request<{id:string}>,res:Response):Promise<voi
 }
 
     const task= await Work.findByIdAndDelete(id);
-
-
     if(!task){
         res.status(404).json({message:"Task not found"})
         return
@@ -155,12 +153,11 @@ const end = new Date(selectedDate);
 end.setUTCHours(23, 59, 59, 999);
 
 const task = await Day.find({
-  user: userId,
-  date: {
-    $gte: start,
-    $lte: end,
-  },
-}).populate("entries");
+    userId,
+    startDay: { $lte: end },
+    endDay: { $gte: start },
+})
+.populate("entries");
         res.status(200).json(task)
     }
     catch(err:any){
