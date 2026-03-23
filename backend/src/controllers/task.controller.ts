@@ -160,7 +160,7 @@ const task = await Day.find({
 .populate("entries");
         res.status(200).json(task)
     }
-    catch(err:any){
+    catch(err:unknown){
         console.error("failed to fetch task",err)
         res.status(500).json({message:"Internal server error"})
     }
