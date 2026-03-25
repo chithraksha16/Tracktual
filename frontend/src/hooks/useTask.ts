@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import  {type AppDispatch, type RootState } from "../app/store"
 import { useCallback } from "react"
-import { setError, setLoading,addTask, setTask,setDay,deleteTask } from "../Redux/trackSlice"
+import { setError, setLoading,addTask, setTask,setDay,deleteTask, setParticularDate } from "../Redux/trackSlice"
 import { taskAPI } from "../services/api"
 
 
@@ -98,7 +98,25 @@ export const useTask=()=>{
     [dispatch]
 )
 
+const getParticularDate=useCallback(async()=>{
+    dispatch(setLoading(true))
+    try{
+        const response= await taskAPI.getParticularDate()
+        console.log(response.data)
+        dispatch(setParticularDate(response.data))
+        return response.data
+    }
+    catch(err:any){
+        const errMsg=err.response?.data?.message || "Failed fetch Particular Task"
+        dispatch(setError(errMsg))
+    }
+    finally{
+        dispatch(setLoading(false))
+    }
 
-    return {item,loading,error,block,addTaskItem,deleteTaskItem,getDayTasks,getAllTask}
+},[dispatch])
+
+
+    return {item,loading,error,block,addTaskItem,deleteTaskItem,getDayTasks,getAllTask,getParticularDate}
 
 }

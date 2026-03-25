@@ -50,6 +50,9 @@ const trackSlice=createSlice({
         setDay:(state,action:PayloadAction<Day[]>)=>{
             state.block=action.payload;
         },
+        setParticularDate:(state,action:PayloadAction<Day[]>)=>{
+            state.block=action.payload
+        },
         addTask:(state,action:PayloadAction<Task>)=>{
             state.item.unshift(action.payload)
         },
@@ -83,6 +86,7 @@ export const {
     setError,
     setTask,
     setDay,
+    setParticularDate,
     addTask,
     deleteTask,
     clearError}=trackSlice.actions
