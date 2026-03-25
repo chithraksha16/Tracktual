@@ -57,7 +57,8 @@ export const taskAPI={
         tag:string})=>api.post('/task/addtask',data),
     deleteTask:(id:string)=>api.delete(`/task/delete/${id}`),
     getDayTask:()=>api.get('/task'),
-    getAllTask:()=>api.get('/task')
+    getAllTask:()=>api.get('/task'),
+    getParticularDate:()=>api.get('/task/taskall')
 }
 
 

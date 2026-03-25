@@ -20,6 +20,7 @@ interface Day{
 interface TaskState{
     item:Task[],
     block:Day[],
+    pDate:Day[],
     loading:boolean,
     error:string | null
 }
@@ -28,6 +29,7 @@ interface TaskState{
 const initialState:TaskState={
     item:[],
     block:[],
+    pDate:[],
     loading:false,
     error:null
 }
@@ -51,7 +53,7 @@ const trackSlice=createSlice({
             state.block=action.payload;
         },
         setParticularDate:(state,action:PayloadAction<Day[]>)=>{
-            state.block=action.payload
+            state.pDate=action.payload
         },
         addTask:(state,action:PayloadAction<Task>)=>{
             state.item.unshift(action.payload)
