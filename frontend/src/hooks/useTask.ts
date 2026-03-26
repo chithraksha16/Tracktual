@@ -12,7 +12,7 @@ import { taskAPI } from "../services/api"
 
 export const useTask=()=>{
     const dispatch=useDispatch<AppDispatch>()
-    const {item,loading,error,block}=useSelector((state:RootState)=>state.task)
+    const {item,loading,error,block,pDate}=useSelector((state:RootState)=>state.task)
 
 
 
@@ -117,6 +117,6 @@ const getParticularDate=useCallback(async()=>{
 },[dispatch])
 
 
-    return {item,loading,error,block,addTaskItem,deleteTaskItem,getDayTasks,getAllTask,getParticularDate}
+    return {item,loading,error,block,pDate,addTaskItem,deleteTaskItem,getDayTasks,getAllTask,getParticularDate}
 
 }

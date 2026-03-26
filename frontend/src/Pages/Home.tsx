@@ -4,7 +4,7 @@ import {CalendarArrowDown} from 'lucide-react'
 
 const Home = () => {
 
-  const {item,block,getAllTask}=useTask()
+  const {block,getAllTask}=useTask()
 
   useEffect(() => {
     
