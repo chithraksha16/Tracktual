@@ -4,12 +4,13 @@ import {CalendarArrowDown} from 'lucide-react'
 
 const Home = () => {
 
-  const {block,getAllTask}=useTask()
+  const {block,getAllTask,getParticularDate}=useTask()
 
   useEffect(() => {
     
     getAllTask()
-  }, [getAllTask])
+    getParticularDate()
+  }, [getAllTask,getParticularDate])
 
   return (
     <div className='w-full'>
@@ -34,14 +35,16 @@ const Home = () => {
               </div>
               <div className='sm:px-5   mt-5 flex  justify-center sm:justify-normal  gap-5 sm:gap-10 flex-wrap'>
               {block?.map((blocks,idx)=>(
-                
                   <div key={idx} className='sm:w-40 sm:h-24 md:w-32 md:h-20 w-32 h-20  border rounded-lg bg-linear-to-br from-25% from-[#000] to-80% to-[#3B022B] flex justify-center items-center space-y-2 '>
+                  <button className='cursor-auto' type='submit' onClick={getParticularDate}>
                   <h1 className='text-white sm:text-xl text-lg '>{new Date(blocks.startDay).toLocaleDateString("en-IN", {
     day: "numeric",
     month: "short",
     year: "numeric"
   })}</h1>
+  </button>
                   </div>
+                  
                   
               ))}
               </div>
