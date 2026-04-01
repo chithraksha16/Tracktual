@@ -12,6 +12,17 @@ const Home = () => {
     getParticularDate()
   }, [getAllTask,getParticularDate])
 
+
+  const handleParticularTask=async()=>{
+    try{
+
+    }
+    catch(err:any){
+    console.error("Failed to load particular task",err)
+    }
+
+  }
+
   return (
     <div className='w-full'>
     <div className=" w-full flex flex-col justify-between p-2">
@@ -38,10 +49,11 @@ const Home = () => {
                   <div key={idx} className='sm:w-40 sm:h-24 md:w-32 md:h-20 w-32 h-20  border rounded-lg bg-linear-to-br from-25% from-[#000] to-80% to-[#3B022B] flex justify-center items-center space-y-2 '>
                   
                   <h1 className='text-white sm:text-xl text-lg '>{new Date(blocks.startDay).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-    year: "numeric"
-  })}</h1>
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric"
+                })}
+                </h1>
                   </div>
                   </button>
                   
