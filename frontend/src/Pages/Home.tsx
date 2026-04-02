@@ -15,7 +15,7 @@ const Home = () => {
 
   const handleParticularTask=async()=>{
     try{
-
+        getParticularDate()
     }
     catch(err:any){
     console.error("Failed to load particular task",err)
