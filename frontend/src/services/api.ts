@@ -58,7 +58,7 @@ export const taskAPI={
     deleteTask:(id:string)=>api.delete(`/task/delete/${id}`),
     getDayTask:()=>api.get('/task'),
     getAllTask:()=>api.get('/task'),
-    getParticularDate:()=>api.get('/task/taskall')
+    getParticularDate:(date:string)=>api.get('/task/taskall')
 }
 
 
