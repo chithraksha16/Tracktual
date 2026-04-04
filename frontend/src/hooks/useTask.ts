@@ -98,10 +98,10 @@ export const useTask=()=>{
     [dispatch]
 )
 
-const getParticularDate=useCallback(async()=>{
+const getParticularDate=useCallback(async(date:string)=>{
     dispatch(setLoading(true))
     try{
-        const response= await taskAPI.getParticularDate()
+        const response= await taskAPI.getParticularDate(date)
         console.log(response.data)
         dispatch(setParticularDate(response.data))
         return response.data

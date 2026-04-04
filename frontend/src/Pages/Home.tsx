@@ -12,9 +12,9 @@ const Home = () => {
   }, [getAllTask])
 
 
-  const handleParticularTask=async(data:string)=>{
+  const handleParticularTask=async(date:string)=>{
     try{
-        await getParticularDate(data)
+        await getParticularDate(date)
     }
     catch(err:any){
     console.error("Failed to load particular task",err)
