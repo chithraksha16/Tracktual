@@ -5,9 +5,7 @@ import { useTask } from "../hooks/useTask"
 const ParticularTask = () => {
   const {pDate,getParticularDate}=useTask()
   console.log(pDate)
-  useEffect(()=>{
-    getParticularDate()
-  },[getParticularDate])
+  
   return (
     <div className="w-full bg-black flex justify-center">
       <div className=' mt-10 w-full max-w-3xl h-18 border flex justify-center items-center bg-linear-to-r from-black to-[#3B022B] rounded-lg'>
