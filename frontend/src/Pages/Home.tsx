@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { useTask } from '../hooks/useTask'
 import {CalendarArrowDown} from 'lucide-react'
-
+import { useParams } from 'react-router-dom'
 const Home = () => {
+  const pathParams=useParams()
 
   const {block,getAllTask,getParticularDate}=useTask()
 
