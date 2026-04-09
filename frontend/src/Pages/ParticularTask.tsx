@@ -1,10 +1,10 @@
-import { useEffect } from "react"
+
 import { useTask } from "../hooks/useTask"
 
 
 const ParticularTask = () => {
-  const {pDate,getParticularDate}=useTask()
-  console.log(pDate)
+  const {pDate}=useTask()
+  
   
   return (
     <div className="w-full bg-black flex justify-center">
