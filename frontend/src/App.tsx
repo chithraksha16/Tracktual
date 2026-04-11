@@ -40,7 +40,7 @@ const {user,loading,checkAuthenticated}=useAuth()
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
         <Route path="/addTask" element={user ? <AddTask/>:<Navigate to="/" /> }/>
         <Route path='/track'  element={<Track/>}/>
-        <Route path='/taskall' element={user ? <ParticularTask/>:<Navigate to="/" />} />
+        <Route path="/tasks/:date" element={user ? <ParticularTask /> : <Navigate to="/" />} />
         </Routes>
         <Footer/>
       </div>
