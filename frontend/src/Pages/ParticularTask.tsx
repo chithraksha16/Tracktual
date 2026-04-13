@@ -23,7 +23,7 @@ const ParticularTask = () => {
 
   return (
     <div className="w-full flex justify-center mt-10">
-      <div className="w-full max-w-2xl p-4 border rounded-lg bg-black text-white">
+      <div className="w-full max-w-2xl p-4 border rounded-lg bg-linear-to-r from-black to-[#3B022B] text-white">
 
         <h1 className="text-xl sm:text-2xl text-center mb-4">
           Tasks for {date && formatDisplayDate(date)}

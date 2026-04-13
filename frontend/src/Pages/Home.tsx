@@ -51,7 +51,7 @@ const Home = () => {
                   )
                 }
               >
-                <div className='w-32 h-20 border rounded-lg flex justify-center items-center bg-black text-white'>
+                <div className='w-32 h-20 border rounded-lg flex justify-center items-center bg-linear-to-r from-black to-[#3B022B] text-white'>
                   {new Date(blocks.startDay).toLocaleDateString("en-IN", {
                     day: "numeric",
                     month: "short",
