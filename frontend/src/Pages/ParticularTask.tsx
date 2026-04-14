@@ -5,11 +5,12 @@ import { useTask } from "../hooks/useTask"
 const ParticularTask = () => {
 
   const { date } = useParams()
-  const { pDate, getParticularDate } = useTask()
+  const { pDate, getParticularDate, } = useTask()
 
   useEffect(() => {
     if (date) {
       getParticularDate(date)
+      console.log(pDate)
     }
   }, [date])
 
@@ -23,21 +24,13 @@ const ParticularTask = () => {
 
   return (
     <div className="w-full flex justify-center mt-10">
-      <div className="w-full max-w-2xl p-4 border rounded-lg bg-linear-to-r from-black to-[#3B022B] text-white">
+      <div className="w-full max-w-2xl p-4 border rounded-lg bg-linear-to-r from-black to-[#3B022B] text-white flex justify-center items-center">
 
-        <h1 className="text-xl sm:text-2xl text-center mb-4">
+        <h1 className="text-xl sm:text-2xl ">
           Tasks for {date && formatDisplayDate(date)}
         </h1>
 
-        {pDate?.length === 0 ? (
-          <p className="text-center">No tasks found</p>
-        ) : (
-          pDate?.map((task, idx) => (
-            <div key={idx} className="border-b py-2">
-              {task.endDay}
-            </div>
-          ))
-        )}
+        
 
       </div>
     </div>

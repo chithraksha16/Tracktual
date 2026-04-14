@@ -21,7 +21,7 @@ const Home = () => {
   }
 
   const handleParticularTask = (date: string) => {
-    navigate(`/tasks/${date}`)
+    navigate(`/taskall/${date}`)
   }
 
   return (
