@@ -29,10 +29,16 @@ const ParticularTask = () => {
         <h1 className="text-xl sm:text-2xl ">
           Tasks for {date && formatDisplayDate(date)}
         </h1>
-
-        
-
       </div>
+      {pDate.map((pdates,idx)=>(
+        <div key={idx}>
+        {pdates.entries.map((entries,idx)=>(
+          <div key={idx}>
+          <h1>{entries.title}</h1>
+          </div>
+        ))}
+        </div>
+      ))}
     </div>
   )
 }
