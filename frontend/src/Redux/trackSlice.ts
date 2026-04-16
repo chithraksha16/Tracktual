@@ -65,19 +65,7 @@ const trackSlice=createSlice({
             state.error=null;
         }
 
-//    setDay: (state, action: PayloadAction<Day>) => {
-//   const index = state.block.findIndex(
-//     day => day.startDay === action.payload.startDay
-//   )
 
-//   if (index !== -1) {
-//     // update existing day
-//     state.block[index] = action.payload
-//   } else {
-//     // first task of that day
-//     state.block.push(action.payload)
-//   }
-// }
 
     }  
 })
