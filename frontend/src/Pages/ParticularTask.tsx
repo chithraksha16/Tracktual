@@ -36,12 +36,15 @@ const ParticularTask = () => {
 
       <div className="flex  gap-5 mt-15">
         {pDate.map((pdates)=>pdates.entries.map((entries,idx)=>(
-          <div key={idx} className="max-w-xs w-full h-48 px-10 border">
-            <h1 className="text-md sm:text-xl ">{entries.title}</h1>
+          <div key={idx} className="max-w-xs w-full h-48 px-10 border rounded-lg space-y-3 ">
+            <h1 className="pt-4 text-md sm:text-2xl font-mono ">{entries.title}</h1>
             <p className="w-full sm:text-md text-sm ">{entries.description}</p>
-            <div className="flex gap-5">
-              <span>{entries.hours}hr {entries.minutes}min</span>
-              <span>{entries.tag}</span>
+            <div className="flex gap-10">
+              <h3 className="text-xl"><span>{entries.hours}hr {entries.minutes}min</span></h3>
+              <h3 className="text-xl"><span>#{entries.tag}</span></h3>
+            </div>
+            <div className="flex justify-end py-2">
+              <button>delete</button>
             </div>
           </div>
         )))}
