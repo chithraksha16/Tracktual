@@ -22,6 +22,12 @@ const ParticularTask = () => {
     })
   }
 
+  const capilizeFirst=(str:string)=>{
+    if (!str) return "";
+    return str.charAt(0) + str.slice(1)
+  }
+  
+
   return (
     <>
     <div>
@@ -34,9 +40,10 @@ const ParticularTask = () => {
       </div>
 
 
-      <div className="flex  gap-5 mt-15">
+      <div className="flex  px-10 gap-5 mt-15">
         {pDate.map((pdates)=>pdates.entries.map((entries,idx)=>(
-          <div key={idx} className="max-w-xs w-full h-48 px-10 border rounded-lg space-y-3 ">
+          <div key={idx} className="max-w-sm w-full h-48 px-10 border rounded-lg space-y-3 ">
+         
             <h1 className="pt-4 text-md sm:text-2xl font-mono ">{entries.title}</h1>
             <p className="w-full sm:text-md text-sm ">{entries.description}</p>
             <div className="flex gap-10">
