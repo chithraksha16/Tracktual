@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useTask } from "../hooks/useTask"
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdAvTimer } from "react-icons/md";
+import { IoPricetagsOutline } from "react-icons/io5";
 
 const ParticularTask = () => {
 
@@ -57,7 +58,7 @@ const ParticularTask = () => {
             <p className="w-full sm:text-md text-sm ">{capitalizeFirst(entries.description)}</p>
             <div className="flex gap-10">
               <h3 className="text-xl flex justify-center items-center gap-2"><MdAvTimer size={23} /><span className="flex">{entries.hours}hr {"  "} {entries.minutes} min</span></h3>
-              <h3 className="text-xl"><span>{checkHashtag(entries.tag)}</span></h3>
+              <h3 className="text-xl flex justify-center items-center gap-2"><IoPricetagsOutline /><span>{checkHashtag(entries.tag)}</span></h3>
             </div>
             <div className="flex justify-end items-end py-1">
               <div className="flex justify-center items-center gap-2">
