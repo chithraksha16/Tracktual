@@ -56,11 +56,11 @@ const ParticularTask = () => {
          
             <h1 className="pt-4 text-md sm:text-2xl font-mono ">{capitalizeFirst(entries.title)}</h1>
             <p className="w-full sm:text-md text-sm ">{capitalizeFirst(entries.description)}</p>
-            <div className="flex gap-10">
+            <div className="flex gap-10 ml-[-2]">
               <h3 className="text-xl flex justify-center items-center gap-2"><MdAvTimer size={23} /><span className="flex">{entries.hours}hr {"  "} {entries.minutes} min</span></h3>
               <h3 className="text-xl flex justify-center items-center gap-2"><IoPricetagsOutline /><span>{checkHashtag(entries.tag)}</span></h3>
             </div>
-            <div className="flex justify-end items-end py-1">
+            <div className="flex justify-end items-end  mt-8">
               <div className="flex justify-center items-center gap-2">
               <button>Delete </button>
               <span className="mt-1 text-[#bbb5b5]"><FaArrowRightLong size={15} /></span>
