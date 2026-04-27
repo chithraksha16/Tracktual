@@ -50,11 +50,10 @@ const ParticularTask = () => {
       </div>
 
 
-      <div className="flex  px-20 gap-5 mt-15">
+      <div className="flex flex-wrap sm:justify-start justify-center  sm:px-20 px-2 gap-5 mt-15">
         {pDate.map((pdates)=>pdates.entries.map((entries,idx)=>(
-          <div key={idx} className="max-w-sm w-full h-48 px-10 border rounded-lg space-y-3 ">
-         
-            <h1 className="pt-4 text-md sm:text-2xl font-mono ">{capitalizeFirst(entries.title)}</h1>
+          <div key={idx} className="sm:w-sm  w-full h-48 px-10 border rounded-3xl space-y-3 ">
+            <h1 className="pt-4 text-lg sm:text-2xl font-mono ">{capitalizeFirst(entries.title)}</h1>
             <p className="w-full sm:text-md text-sm ">{capitalizeFirst(entries.description)}</p>
             <div className="flex gap-10 ml-[-2]">
               <h3 className="text-xl flex justify-center items-center gap-2"><MdAvTimer size={23} /><span className="flex">{entries.hours}hr {"  "} {entries.minutes} min</span></h3>

@@ -40,7 +40,7 @@ const Home = () => {
             <CalendarArrowDown size={18} />
           </div>
 
-          <div className='mt-5 flex flex-wrap gap-5'>
+          <div className='mt-5 flex flex-wrap justify-center sm:justify-start gap-5'>
 
             {block?.map((blocks, idx) => (
               <button
