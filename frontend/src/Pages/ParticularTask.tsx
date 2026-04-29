@@ -40,7 +40,7 @@ const ParticularTask = () => {
 
   return (
     <>
-    <div className="h-auto pb-10">
+    <div className="h-auto pb-15">
       <div className="flex justify-center px-2">
       <div className="w-full max-w-2xl p-5 border rounded-lg bg-linear-to-r from-black to-[#3B022B] text-white flex justify-center items-center mt-10">
         <h1 className="text-xl sm:text-2xl ">
