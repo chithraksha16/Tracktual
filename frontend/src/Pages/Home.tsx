@@ -33,7 +33,7 @@ const Home = () => {
           <p className="text-center text-sm">Keep track to stay focused and productive.</p>
         </div>
 
-        <div className='flex flex-col sm:p-8 p-2'>
+        <div className='flex flex-col sm:p-10  p-2'>
 
           <div className='flex items-center gap-3'>
             <h1 className='text-lg sm:text-2xl'>Calendar Timeline</h1>

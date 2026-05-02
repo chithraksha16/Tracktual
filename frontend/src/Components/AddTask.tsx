@@ -13,8 +13,8 @@ const AddTask = () => {
   const [formData, setFormData] = useState<Formvariable>({
     title: "",
     description: "",
-    hours: 0,
-    minutes: 0,
+    hours:0 ,
+    minutes:0,
     tag: ""
   });
 
@@ -54,7 +54,7 @@ const AddTask = () => {
  
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="max-w-sm border w-full p-10 rounded-lg bg-radial-[at_90%_10%] from-20% from-gray-900 to-black">
+      <div className=" w-full max-w-sm border  p-8 rounded-lg bg-radial-[at_90%_10%] from-20% from-gray-900 to-black">
         <h1 className="text-center text-xl p-3">Add Task</h1>
 
         <form onSubmit={handleSubmit} className="space-y-3">
