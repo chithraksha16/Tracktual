@@ -99,6 +99,12 @@ const AddTask = () => {
                   onChange={handleChange}
                   className="border w-full rounded p-2 no-spinner"
                   placeholder="00"
+                  onFocus={() =>
+                setFormData((prev) => ({
+                ...prev,
+                hours: 0,
+                }))
+                }
                 />
                 <p className="text-lg font-mono">hr</p>
               </div>
@@ -116,6 +122,12 @@ const AddTask = () => {
                   onChange={handleChange}
                   className="border w-full rounded p-2 no-spinner"
                   placeholder="00"
+                  onFocus={() =>
+                setFormData((prev) => ({
+                ...prev,
+                minutes: 0,
+                }))
+                }
                 />
                 <p className="text-lg font-mono">min</p>
               </div>
