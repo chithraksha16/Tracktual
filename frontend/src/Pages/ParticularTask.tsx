@@ -62,7 +62,7 @@ const ParticularTask = () => {
             <div className="flex justify-end items-end  sm:mt-8">
               <div className="flex justify-center items-center gap-2">
               <button>Delete </button>
-              <span className="mt-1 text-[#bbb5b5]"><FaArrowRightLong size={15} /></span>
+              <span className="mt-1 text-[#bbb5b5] drop-shadow-[0_3px_4px_rgba(255,255,255,0.2)] hover:opacity-50"><FaArrowRightLong size={15} /></span>
               </div>
             </div>
           </div>
