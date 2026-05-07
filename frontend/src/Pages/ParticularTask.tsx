@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useTask } from "../hooks/useTask"
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -6,6 +6,14 @@ import { MdAvTimer } from "react-icons/md";
 import { IoPricetagsOutline } from "react-icons/io5";
 
 const ParticularTask = () => {
+  const [isExpanded,setIsExapanded]=useState(false)
+
+  const truncateWords = (text: string) => {
+  const words = text.split(" ")
+  return words.length <= 6
+    ? text
+    : words.slice(0, 6).join(" ") + "…"
+}
 
   const { date } = useParams()
   const { pDate, getParticularDate, } = useTask()
@@ -54,7 +62,7 @@ const ParticularTask = () => {
         {pDate.map((pdates)=>pdates.entries.map((entries,idx)=>(
           <div key={idx} className="sm:w-sm  w-full sm:h-auto h-52 sm:px-10 px-4 border border-white/60 rounded-3xl space-y-3 py-2 bg-radial-[at_80%_40%] from-10% from-[#2E1339] to-[#07020B]    ">
             <h1 className="pt-4 text-lg sm:text-2xl font-mono ">{capitalizeFirst(entries.title)}</h1>
-            <p className="w-full sm:text-md text-sm ">{capitalizeFirst(entries.description)}</p>
+            <p className="w-full sm:text-md text-sm ">{truncateWords(capitalizeFirst(entries.description))}</p>
             <div className="flex gap-10 ml-[-2] py-2 mt-4">
               <h3 className="sm:text-xl flex justify-center items-center gap-2"><MdAvTimer size={23} /><span className="flex">{entries.hours}hr {"  "} {entries.minutes} min</span></h3>
               <h3 className="sm:text-xl flex justify-center items-center gap-2"><IoPricetagsOutline /> <span>{checkHashtag(entries.tag)}</span></h3>

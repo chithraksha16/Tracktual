@@ -12,9 +12,7 @@ type TrackCardProps = {
 const TrackCard = ({ text, wordLimit = 6 }: TrackCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const displayText = isExpanded
-    ? text
-    : truncateWords(text, wordLimit)
+  const displayText = isExpanded? text : truncateWords(text, wordLimit)
 
   return (
     <div className="flex px-1">
